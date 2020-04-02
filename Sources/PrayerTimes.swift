@@ -193,12 +193,12 @@ public struct PrayerTimes {
             return .fajr
         }
 
-        return nil
+        return .isha
     }
 
     public func nextPrayer(at time: Date = Date()) -> Prayer? {
         if isha.timeIntervalSince(time) <= 0 {
-            return nil
+            return .fajr
         } else if maghrib.timeIntervalSince(time) <= 0 {
             return .isha
         } else if asr.timeIntervalSince(time) <= 0 {
